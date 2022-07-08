@@ -30,7 +30,7 @@ const variableOptions = {
 };
 
 class ContestForm extends React.Component {
-    getPreference = () => {
+    getPreference = (state = variableOptions) => {
       const { contestType } = this.props;
       switch (contestType) {
         case CONSTANTS.NAME_CONTEST: {
@@ -48,6 +48,7 @@ class ContestForm extends React.Component {
           this.props.getData({ characteristic1: 'brandStyle' });
           break;
         }
+        default: return state
       }
     }
 

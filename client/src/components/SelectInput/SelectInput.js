@@ -34,7 +34,7 @@ const SelectInput = ({
 
   useLayoutEffect(() => {
     if (!initialValue && optionsArray) {
-      setFieldValue(field.name, valueArray ? valueArray[0] : optionsArray[0]);
+      setFieldValue((field.name, valueArray) ? valueArray[0] : optionsArray[0]);
     }
   }, []);
 

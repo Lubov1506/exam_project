@@ -4,8 +4,12 @@ import SelectInput from '../SelectInput/SelectInput';
 import FormInput from '../FormInput/FormInput';
 import styles from '../ContestForm/ContestForm.module.sass';
 import Spinner from '../Spinner/Spinner';
-
-const OptionalSelects = (props) => {
+const initValues = {
+  name: '',
+  header: '',
+  classes: ''
+}
+const OptionalSelects = (props, state=initValues) => {
   if (props.isFetching) {
     return <Spinner />;
   }
@@ -102,6 +106,7 @@ const OptionalSelects = (props) => {
         </>
       );
     }
+    default: return state
   }
 };
 
